@@ -7,6 +7,7 @@ import hero_image_back from "../../assets/hero_image_back.png";
 import Calories from "../../assets/calories.png";
 import NumberCounter from "number-counter";
 import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 
 function Hero() {
   const transition = { type: "spring", duration: "3" };
@@ -73,7 +74,9 @@ function Hero() {
         </div>
       </div>
       <div className="Right-h">
-        <button className="btn">Join Now</button>
+        <Link to="join-us" spy={true} smooth={true} offset={-100} className="btn">
+          Join Now
+        </Link>
 
         <motion.div
           initial={{ right: "-1rem" }}

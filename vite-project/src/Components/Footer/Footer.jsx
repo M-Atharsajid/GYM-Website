@@ -11,9 +11,27 @@ function Footer() {
       <hr />
       <div className="footer">
         <div className="social-links">
-          <img src={Github} alt="" />
-          <img src={Instagram} alt="" />
-          <img src={LinkedIn} alt="" />
+          <a
+            href="https://github.com/M-Atharsajid"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={Github} alt="Github" />
+          </a>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={Instagram} alt="Instagram" />
+          </a>
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={LinkedIn} alt="LinkedIn" />
+          </a>
         </div>
         <div className="logo-f">
           <img src={Logo} alt="" />

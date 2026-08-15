@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-scroll";
 import "./programs.css";
 import RightArrow from "../../assets/rightArrow.png";
 import { programsData } from "../../Data/programData";
 
-function Programs() {
+function Programs({ onSelectProgram }) {
   return (
     <div className="Programs" id="programs">
       {/* header */}
@@ -15,14 +16,21 @@ function Programs() {
 
       <div className="program-categories">
         {programsData.map((program) => (
-          <div className="category">
+          <div className="category" key={program.heading}>
             {program.image}
             <span>{program.heading}</span>
             <span>{program.details}</span>
-            <div className="join-now">
+            <Link
+              to="join-us"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              className="join-now"
+              onClick={() => onSelectProgram(program.heading)}
+            >
               <span>Join Now</span>
               <img src={RightArrow} alt="Right Arrow" />
-            </div>
+            </Link>
           </div>
         ))}
       </div>
