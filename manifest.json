@@ -1,0 +1,15 @@
+{
+  "short_name": "The Fit Club",
+  "name": "The Fit Club — Gym & Fitness",
+  "icons": [
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "any"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#f48915",
+  "background_color": "#3c3f45"
+}
