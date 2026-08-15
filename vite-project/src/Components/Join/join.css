@@ -23,20 +23,36 @@
 } */
 .right-j {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: flex-end;
+  gap: 0.75rem;
 }
 .email-container {
+  --joinFieldBg: #776d77;
   display: flex;
+  align-items: center;
   gap: 3rem;
-  background-color: gray;
+  background-color: var(--joinFieldBg);
   padding: 1rem 2rem;
 }
 .email-container > input {
   background-color: transparent;
   border: none;
   outline: none;
-  color: var(--lightgray);
+  color:white;
+  flex: 1;
+}
+/* Stop Chrome autofill from painting the field white */
+.email-container > input:-webkit-autofill,
+.email-container > input:-webkit-autofill:hover,
+.email-container > input:-webkit-autofill:focus,
+.email-container > input:-webkit-autofill:active {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0 1000px var(--joinFieldBg) inset;
+  box-shadow: 0 0 0 1000px var(--joinFieldBg) inset;
+  caret-color: white;
+  transition: background-color 5000s ease-in-out 0s;
 }
 ::placeholder {
   color: var(--lightgray);
@@ -44,6 +60,41 @@
 .btn-j {
   background-color: var(--orange);
   color: white;
+}
+.btn-j:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.selected-program {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--lightgray);
+  font-size: 0.9rem;
+}
+.selected-program strong {
+  color: var(--orange);
+}
+.clear-program {
+  background: none;
+  border: none;
+  color: var(--lightgray);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+.clear-program:hover {
+  color: var(--orange);
+}
+.form-status {
+  font-size: 0.85rem;
+}
+.form-status.success {
+  color: #4ade80;
+}
+.form-status.error {
+  color: #f87171;
 }
 @media screen and (max-width: 768px) {
   .Join {

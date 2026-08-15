@@ -64,6 +64,10 @@
 }
 .feature > img {
   width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  align-self: center;
+  object-fit: contain;
 }
 .plans > :nth-child(2) > svg {
   fill: white;

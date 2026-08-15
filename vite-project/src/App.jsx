@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Header from "./Components/Header/header";
 import Hero from "./Components/Hero/Hero";
@@ -10,14 +10,20 @@ import Join from "./Components/Join/Join";
 import Footer from "./Components/Footer/footer";
 
 function App() {
+  // Which program the visitor clicked "Join Now" on, sent along with the form.
+  const [selectedProgram, setSelectedProgram] = useState("");
+
   return (
     <div className="App">
       <Hero />
-      <Programs />
+      <Programs onSelectProgram={setSelectedProgram} />
       <Reasons />
       <Plans />
       <Testimonials />
-      <Join />
+      <Join
+        selectedProgram={selectedProgram}
+        onClearProgram={() => setSelectedProgram("")}
+      />
       <Footer />
     </div>
   );
